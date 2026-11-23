@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0d12">
+
+    <link rel="icon" href="ippo.webp" type="image/png">
+
+    <title>Hajime no Ippo: Victorious Spirits Download – Android & iOS</title>
+    
+    <meta name="description"
+        content="Download Hajime no Ippo: Victorious Spirits on Android and iOS. Get step-by-step install guides, gameplay tips, and the latest game updates at IppoGame.">
+
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="author" content="IppoGame">
+    <link rel="canonical" href="https://ippogame.xyz/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ippogame.xyz/">
+    <meta property="og:title" content="Hajime no Ippo: Victorious Spirits Download – Android & iOS">
+    <meta property="og:description"
+        content="Download Hajime no Ippo: Victorious Spirits on Android and iOS. Get step-by-step install guides, gameplay tips, and the latest game updates at IppoGame.">
+    <meta property="og:image" content="https://ippogame.xyz/ippo.webp">
+    <meta property="og:image:type" content="image/webp">
+    <meta property="og:site_name" content="IppoGame">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hajime no Ippo: Victorious Spirits Download – Android & iOS">
+    <meta name="twitter:description"
+        content="Download Hajime no Ippo: Victorious Spirits on Android and iOS. Get step-by-step install guides, gameplay tips, and the latest game updates at IppoGame.">
+    <meta name="twitter:image" content="https://ippogame.xyz/ippo.webp">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0b0d12;
+            --surface: #141821;
+            --line: rgba(255, 255, 255, 0.10);
+            --text: #f4f5f7;
+            --muted: #aab0bd;
+            --red: #e11d2e;
+            --red-dark: #b3121f;
+            --gold: #fbbf24;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            background: var(--bg);
+            background-image:
+                radial-gradient(ellipse 80% 50% at 50% -10%, rgba(225, 29, 46, 0.28), transparent 70%),
+                radial-gradient(ellipse 60% 40% at 90% 100%, rgba(251, 191, 36, 0.08), transparent 70%);
+            background-attachment: fixed;
+            color: var(--text);
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .brand-title {
+            font-family: 'Lexend', sans-serif;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+        }
+
+        .logo {
+            width: 88px;
+            height: 88px;
+            border-radius: 24px;
+            object-fit: cover;
+            display: block;
+            background: #000;
+            box-shadow:
+                0 14px 30px -8px rgba(0, 0, 0, 0.9),
+                inset 0 1px 1px rgba(255, 255, 255, 0.35);
+        }
+
+        .logo-wrap {
+            position: relative;
+            padding: 3px;
+            border-radius: 27px;
+            background: linear-gradient(145deg, var(--gold), var(--red) 60%, var(--red-dark));
+            box-shadow:
+                0 0 0 6px rgba(255, 255, 255, 0.04),
+                0 0 36px -4px rgba(225, 29, 46, 0.55),
+                0 0 60px -10px rgba(251, 191, 36, 0.35);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .logo-wrap:hover {
+            transform: scale(1.06) rotate(-2deg);
+        }
+
+        .logo-wrap.in-popup {
+            margin-bottom: 24px;
+        }
+
+        .photo-frame {
+            position: relative;
+            width: 100%;
+            max-width: 340px;
+            aspect-ratio: 1 / 1;
+            border-radius: 28px;
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            box-shadow:
+                0 30px 60px -20px rgba(0, 0, 0, 0.9),
+                0 0 0 6px rgba(255, 255, 255, 0.03),
+                0 0 60px -10px rgba(225, 29, 46, 0.35);
+        }
+
+        .photo-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.9s ease;
+        }
+
+        .photo-slide.active {
+            opacity: 1;
+        }
+
+        .photo-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(8px);
+            z-index: 5;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 0;
+            padding: 0;
+            background: rgba(255, 255, 255, 0.45);
+            cursor: pointer;
+            transition: transform 0.25s, background 0.25s;
+        }
+
+        .dot.active {
+            background: #fff;
+            transform: scale(1.3);
+        }
+
+        .buy-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-height: 56px;
+            padding: 14px 20px;
+            border-radius: 16px;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s, background 0.2s;
+        }
+
+        .buy-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .buy-btn:focus-visible,
+        .dot:focus-visible,
+        .cancel-btn:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        .buy-btn:active {
+            transform: scale(0.98);
+        }
+
+        .buy-ios {
+            background: #ffffff;
+            color: #0b0d12;
+            box-shadow: 0 10px 28px -8px rgba(255, 255, 255, 0.35);
+        }
+
+        .buy-ios:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 32px -8px rgba(255, 255, 255, 0.5);
+        }
+
+        .buy-android {
+            background: linear-gradient(180deg, #f0283a 0%, var(--red-dark) 100%);
+            color: #ffffff;
+            box-shadow: 0 10px 28px -8px rgba(225, 29, 46, 0.7);
+        }
+
+        .buy-android:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 32px -8px rgba(225, 29, 46, 0.9);
+        }
+
+        #redirect-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(7, 8, 12, 0.94);
+            backdrop-filter: blur(18px);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            text-align: center;
+        }
+
+        #redirect-overlay.show {
+            opacity: 1;
+        }
+
+        .pulse-logo {
+            animation: pulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(0.97);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .progress-track {
+            width: 100%;
+            max-width: 260px;
+            height: 6px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+            margin: 14px 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--gold), var(--red));
+            transition: width 2.2s linear;
+        }
+
+        .cancel-btn {
+            margin-top: 18px;
+            background: none;
+            border: 1px solid var(--line);
+            color: var(--muted);
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .cancel-btn:hover {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <main id="main-content" class="w-full max-w-md mx-auto px-5 pt-10 pb-6 flex-1 flex flex-col items-center">
+
+        <header class="text-center mb-7 flex flex-col items-center">
+            <div class="logo-wrap mb-5">
+                <img src="ippo.webp" alt="Hajime no Ippo logo" class="logo">
+            </div>
+
+            <span
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-[11px] font-bold tracking-widest uppercase mb-4"
+                style="border-color: var(--line); background: rgba(255,255,255,0.05); color: var(--gold);">
+                <span aria-hidden="true">🥊</span>OFFICIAL BUILD &bull; V2.6
+            </span>
+
+            <h1 class="brand-title text-4xl uppercase">
+                Hajime no Ippo
+                <span class="block text-2xl mt-1" style="color: var(--red);">Victorious Spirits</span>
+            </h1>
+
+            <p class="mt-3 text-sm leading-relaxed max-w-[320px]" style="color: var(--muted);">
+                Train your own boxer, face iconic rivals from the manga and fight your way to the top of the ring.
+            </p>
+        </header>
+
+        <section class="photo-frame mb-8" aria-label="Game screenshots">
+            <div class="photo-slide active">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS85xFbX-1JorXHV_hOpSBt4vLaTeFtkq06gkvfCJGxw72Ou0MoOdDq0dX7&s=10"
+                    alt="Gameplay 1" referrerpolicy="no-referrer">
+            </div>
+            <div class="photo-slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr6UtAXzfYpauvh6KQLFKeK7cwWSOT_SPCrsgd170qZ_qMi1D-BcYtnBJL&s=10"
+                    alt="Gameplay 2" referrerpolicy="no-referrer">
+            </div>
+            <div class="photo-slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRji9m5J3ef-ZIZ3L1ILiMo0NDs3Zp80mcAmwFjDtagahUCul9FdDpmsTA&s=10"
+                    alt="Gameplay 3" referrerpolicy="no-referrer">
+            </div>
+
+            <div class="photo-dots" role="tablist" aria-label="Choose screenshot">
+                <button class="dot active" aria-label="Screenshot 1" onclick="jumpSlide(0)"></button>
+                <button class="dot" aria-label="Screenshot 2" onclick="jumpSlide(1)"></button>
+                <button class="dot" aria-label="Screenshot 3" onclick="jumpSlide(2)"></button>
+            </div>
+        </section>
+
+        <section class="w-full max-w-[320px] text-center">
+            <p class="text-[11px] font-bold uppercase tracking-[0.25em] mb-4" style="color: var(--muted);">
+                Choose your device
+            </p>
+
+            <div class="flex flex-col gap-3">
+                <button class="buy-btn buy-ios" onclick="startDownload('download')">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.42c.64-.78 1.08-1.87.96-2.96-.94.04-2.07.63-2.73 1.41-.58.68-1.1 1.77-.96 2.84 1.05.08 2.1-.51 2.73-1.29z" />
+                    </svg>
+                    Download for iPhone
+                </button>
+
+                <button class="buy-btn buy-android" onclick="startDownload('download')">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v6c0 .83.67 1.5 1.5 1.5S5 16.33 5 15.5v-6c0-.83-.67-1.5-1.5-1.5zm17 0c-.83 0-1.5.67-1.5 1.5v6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-6c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
+                    </svg>
+                    Download for Android
+                </button>
+            </div>
+
+        </section>
+
+        <footer class="mt-10 text-center text-[11px] leading-relaxed" style="color: #7c8393;">
+            ©2026 Hajime no ippo deployment engine.
+        </footer>
+    </main>
+
+    <div id="redirect-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+        <div class="logo-wrap in-popup pulse-logo">
+            <img src="ippo.webp" alt="" class="logo">
+        </div>
+        <h2 id="popup-title" class="text-xl font-extrabold mb-1">Wait a few sec...</h2>
+        <div class="progress-track" aria-hidden="true">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <p id="popup-text" class="text-sm" style="color: var(--muted);">Redirecting you now</p>
+        <button class="cancel-btn" onclick="cancelRedirect()">Cancel</button>
+    </div>
+
+    <script>
+        const LOCKER = "https://downloadaccess.site/cl/i/qn1m65";
+
+        const slides = document.querySelectorAll('.photo-slide');
+        const dots = document.querySelectorAll('.dot');
+        let slideIndex = 0;
+
+        function jumpSlide(i) {
+            slideIndex = i;
+            slides.forEach((s, n) => s.classList.toggle('active', n === i));
+            dots.forEach((d, n) => d.classList.toggle('active', n === i));
+        }
+
+        setInterval(() => jumpSlide((slideIndex + 1) % slides.length), 3500);
+
+        const overlay = document.getElementById('redirect-overlay');
+        const bar = document.getElementById('progress-bar');
+        const title = document.getElementById('popup-title');
+        const text = document.getElementById('popup-text');
+        let redirectTimer = null;
+
+        function startDownload() {
+            title.textContent = "Preparing Download...";
+            text.textContent = "You will be redirected automatically.";
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+
+            requestAnimationFrame(() => {
+                overlay.classList.add('show');
+                bar.style.width = '100%';
+            });
+
+            redirectTimer = setTimeout(() => {
+                window.location.href = LOCKER;
+            }, 2300);
+        }
+
+        function cancelRedirect() {
+            clearTimeout(redirectTimer);
+            overlay.classList.remove('show');
+            bar.style.transition = 'none';
+            bar.style.width = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+                bar.style.transition = '';
+            }, 350);
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && overlay.style.display === 'flex') cancelRedirect();
+        });
+    </script>
+</body>
+
+</html>
